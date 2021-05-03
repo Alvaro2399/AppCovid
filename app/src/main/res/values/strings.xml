@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CovidApp </string>
+
+    //Menu Desplegable
+    <string name="item1">Actualizar perfil</string>
+    <string name="item2">Políticas de privacidad</string>
+    <string name="item3">Cerrar sesión</string>
+</resources>

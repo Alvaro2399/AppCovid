@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E6E6"
+    tools:context=".Registrar">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Crear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="16dp"
+                android:text="CREAR"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/Cuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Crear"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="-15dp"
+                android:text="CUENTA"
+                android:textColor="@color/black"
+                android:textSize="46dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarNombre"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/Cuenta"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Nombre"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarApellido"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarNombre"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Apellido"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarDni"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarApellido"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Dni"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp" />
+
+            <EditText
+                android:id="@+id/txt_RegistrarTelefono"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarDni"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Número de telefóno"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarCorreo"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarTelefono"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Correo Electrónico"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp" />
+
+            <EditText
+                android:id="@+id/txt_RegistrarContraseña"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarCorreo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Contraseña"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarConfirmarContraseña"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarContraseña"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Confirmar Contraseña"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btn_CrearCuenta"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarConfirmarContraseña"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="12dp"
+                android:text="CREAR CUENTA" />
+
+            <TextView
+                android:id="@+id/separador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btn_CrearCuenta"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/separadpr1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/separador"
+                android:layout_marginTop="15dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_yaeresusuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/separador"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/btn_CrearCuenta"
+                android:layout_marginTop="20dp"
+                android:text="¿Ya eres usuario?"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textAlignment="center"
+                />
+
+            <Button
+                android:id="@+id/btn_Volver_IniciarSesion"
+                android:layout_width="120dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_below="@id/btn_CrearCuenta"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/separador"
+                android:onClick="VolverVentana"
+                android:text="INICIAR SESION"
+                android:textSize="12dp"
+                />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
