@@ -392,22 +392,34 @@
                 android:scaleX="1.7"
                 android:scaleY="1.7" />
 
+            <View
+                android:id="@+id/line_separador9"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_9"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
             <TextView
                 android:id="@+id/separador_medio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/tv_evc_9"
+                android:layout_below="@id/line_separador9"
                 android:layout_marginTop="36dp"/>
 
             <Button
                 android:id="@+id/btn_evc_Cancelar"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_below="@id/tv_evc_9"
+                android:layout_below="@id/line_separador9"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="13dp"
                 android:layout_marginRight="2dp"
                 android:layout_toLeftOf="@id/separador_medio"
                 android:text="CANCELAR" />
@@ -416,13 +428,13 @@
                 android:id="@+id/btn_evc_continuar"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_below="@id/tv_evc_9"
+                android:layout_below="@id/line_separador9"
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/separador_medio"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="22dp"
-                android:text="ACTUALIZAR" />
+                android:layout_marginTop="13dp"
+                android:text="CONTINUAR" />
 
             <TextView
                 android:id="@+id/separador_medio1"
