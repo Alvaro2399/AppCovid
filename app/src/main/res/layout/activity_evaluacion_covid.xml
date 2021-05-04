@@ -56,7 +56,7 @@
             <TextView
                 android:id="@+id/tv_evc_1"
                 android:layout_width="250dp"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentLeft="true"
                 android:layout_toLeftOf="@id/sw_evc_1"
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.5dp"
                 android:layout_below="@id/tv_evc_1"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="16dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginRight="25dp"
@@ -95,14 +95,14 @@
             <TextView
                 android:id="@+id/tv_evc_2"
                 android:layout_width="250dp"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentLeft="true"
-                android:layout_toLeftOf="@id/sw_evc_1"
+                android:layout_toLeftOf="@id/sw_evc_2"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="25dp"
                 android:layout_below="@id/line_separador1"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/black"
                 android:text="¿Has tenido mas de 38° C de temperatura en las últimas 24 horas?"
                 android:textSize="17dp" />
@@ -114,10 +114,324 @@
                 android:layout_below="@id/line_separador1"
                 android:layout_alignParentRight="true"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador2"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_2"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_3"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador2"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="¿Vives con una persona que ha dado positivo para Coronavirus en los últimos 14 días?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador2"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador3"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_3"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_4"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_4"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador3"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/black"
+                android:text="¿Tienes tos?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador3"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador4"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_4"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_5"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_5"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador4"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="¿Tienes dolor o picazón de garganta?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador4"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador5"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_5"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_6"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_6"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador5"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="¿Tienes congestión nasal?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador5"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador6"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_6"
+                android:layout_marginTop="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_7"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_7"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador6"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="¿Has perdido el sentido del gusto u olfato?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador6"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador7"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_7"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_8"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_8"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador7"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="¿Has presentado dolor abdominal tipo cólico, vomitos o diarrea en las últimas 24 horas?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador7"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="35dp"
                 android:scaleX="1.7"
                 android:scaleY="1.7" />
+
+            <View
+                android:id="@+id/line_separador8"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/tv_evc_8"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B1AEAE"/>
+
+            <TextView
+                android:id="@+id/tv_evc_9"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/sw_evc_9"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@id/line_separador8"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="¿Has presentado dolor de cabeza y/o malestar general?"
+                android:textSize="17dp" />
+
+            <Switch
+                android:id="@+id/sw_evc_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_separador8"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="35dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <TextView
+                android:id="@+id/separador_medio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_evc_9"
+                android:layout_marginTop="36dp"/>
+
+            <Button
+                android:id="@+id/btn_evc_Cancelar"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tv_evc_9"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@id/separador_medio"
+                android:text="CANCELAR" />
+
+            <Button
+                android:id="@+id/btn_evc_continuar"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tv_evc_9"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/separador_medio"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="22dp"
+                android:text="ACTUALIZAR" />
+
+            <TextView
+                android:id="@+id/separador_medio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/separador_medio"
+                android:layout_marginTop="10dp"/>
+
 
         </RelativeLayout>
 
