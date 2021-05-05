@@ -55,7 +55,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/Et_DniUsuario"
                 android:layout_marginTop="25dp"
-                android:text="EN CUARENTENA"
+                android:text="SIN SINTOMAS"
                 android:textSize="20dp"
                 android:background="@drawable/stylo_borde_edittext"
                 android:textColor="@color/black"
