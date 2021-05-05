@@ -422,6 +422,7 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginRight="2dp"
                 android:layout_toLeftOf="@id/separador_medio"
+
                 android:text="CANCELAR" />
 
             <Button
@@ -430,10 +431,11 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/line_separador9"
                 android:layout_alignParentRight="true"
-                android:layout_toRightOf="@id/separador_medio"
                 android:layout_marginLeft="2dp"
-                android:layout_marginRight="25dp"
                 android:layout_marginTop="13dp"
+                android:layout_marginRight="25dp"
+                android:layout_toRightOf="@id/separador_medio"
+                android:onClick="ContinuarPagPrin"
                 android:text="CONTINUAR" />
 
             <TextView
