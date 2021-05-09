@@ -63,6 +63,41 @@
                 android:textAlignment="center"
                 />
 
+            <ImageView
+                android:id="@+id/Img_sintomas"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/Et_EstadoUsuario"
+                android:layout_marginTop="25dp"
+                app:srcCompat="@drawable/salud2"/>
+
+            <TextView
+                android:id="@+id/EstadoPaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/Img_sintomas"
+                android:layout_marginTop="16dp"
+                android:text="Hola Perra"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                />
+
+
+            <Button
+                android:id="@+id/btn_PP_EvaluacionSintomas"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:layout_above="@id/btn_PP_SolicitarPrueba"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:onClick="DescarteCovid"
+                android:text="REALIZAR DESCARTE DE COVID"
+
+                android:textSize="16dp" />
+
+
 
             <TextView
                 android:id="@+id/separador_PP_botones"
@@ -130,17 +165,7 @@
 
                 />
 
-            <Button
-                android:id="@+id/btn_PP_EvaluacionSintomas"
-                android:layout_width="160dp"
-                android:layout_height="90dp"
-                android:layout_above="@id/btn_PP_SolicitarPrueba"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                android:onClick="DescarteCovid"
-                android:text="REALIZAR DESCARTE DE COVID"
 
-                android:textSize="16dp" />
 
 
 
