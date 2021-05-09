@@ -7,12 +7,34 @@
     android:background="#E6E6E6"
     tools:context=".EvaluacionInicial">
 
+
+    <ImageView
+        android:id="@+id/BarraHerramientas"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ea8121"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="25dp"
+        android:backgroundTint="#ea8121"
+        android:onClick="IrOpciones1"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:srcCompat="@drawable/btnopciones" />
+
     <TextView
         android:id="@+id/txt_TituloEvaluacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/BarraHerramientas"
         android:layout_marginTop="20dp"
         android:text="MEDICAL APP"
         android:textSize="40dp"
@@ -60,5 +82,7 @@
         android:onClick="IrEvaluacionCovid"
         android:text="Evalúate"
         android:textSize="16dp" />
+
+
 
 </RelativeLayout>

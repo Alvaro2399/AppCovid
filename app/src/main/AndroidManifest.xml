@@ -9,18 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCovid">
-        <activity android:name=".PaginaPrincipal"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            >
+        <activity android:name=".MenuOpciones2"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
         <activity
-            android:name=".EvaluacionCovid"
+            android:name=".MenuOpciones"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".PaginaPrincipal"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".EvaluacionCovid"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ActualizarPerfil"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".EvaluacionInicial" />
+        <activity
+            android:name=".EvaluacionInicial"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Registrar"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

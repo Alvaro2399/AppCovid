@@ -20,5 +20,12 @@ public class PaginaPrincipal extends AppCompatActivity {
         startActivity(descarte);
     }
 
+    //Metodo para pasar de ventana
+    public void IrOpciones2(View view){
+        Intent opcione2 = new Intent(this, MenuOpciones2.class);
+        startActivity(opcione2);
+    }
+
+
 
 }

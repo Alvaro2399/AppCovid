@@ -23,12 +23,20 @@ public class EvaluacionInicial extends AppCompatActivity {
         startActivity(evacovid);
     }
 
+    //Metodo para pasar de ventana
+    public void IrOpciones1(View view){
+        Intent opcione1 = new Intent(this, MenuOpciones.class);
+        startActivity(opcione1);
+    }
+
+
+    /*
     //Metodo para mostrar y ocultar menu desplegable
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.overflow, menu);
         return true;
     }
-
+    */
     //Metodo para signar funciones a las opciones del menu
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
