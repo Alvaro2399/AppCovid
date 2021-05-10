@@ -14,6 +14,11 @@ public class EvaluacionCovid extends AppCompatActivity {
         setContentView(R.layout.activity_evaluacion_covid);
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     //Metodo para pasar de ventana
     public void ContinuarPagPrin(View view){
             Intent contpagprin = new Intent(this, PaginaPrincipal.class);

@@ -16,6 +16,10 @@ public class EvaluacionInicial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaaluacion_inicial);
     }
+    @Override
+    public void onBackPressed() {
+
+    }
 
     //Metodo para pasar de ventana
     public void IrEvaluacionCovid(View view){

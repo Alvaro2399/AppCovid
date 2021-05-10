@@ -26,6 +26,9 @@ public class PaginaPrincipal extends AppCompatActivity {
         startActivity(opcione2);
     }
 
+    @Override
+    public void onBackPressed() {
 
+    }
 
 }

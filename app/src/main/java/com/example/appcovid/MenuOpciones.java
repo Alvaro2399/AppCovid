@@ -14,6 +14,11 @@ public class MenuOpciones extends AppCompatActivity {
         setContentView(R.layout.activity_menu_opciones);
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     //Metodo para pasar de ventana
     public void VolverMenu(View view){
         Intent volverMenu1 = new Intent(this, EvaluacionInicial.class);
