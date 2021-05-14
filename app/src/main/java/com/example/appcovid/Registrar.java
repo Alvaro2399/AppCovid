@@ -89,6 +89,11 @@ public class Registrar extends AppCompatActivity {
 
         inicializarFirebase();
     }
+    @Override
+    public void onBackPressed() {
+
+    }
+
 
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
