@@ -46,10 +46,27 @@
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/txt_RegistrarNombre"
+                android:id="@+id/txt_RegistrarDni"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/Cuenta"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="DNI"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txt_RegistrarNombre"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarDni"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
@@ -69,8 +86,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/stylo_borde_edittext"
                 android:hint="Apellido"
                 android:textColorHint="@color/black"
@@ -78,17 +95,17 @@
                 android:paddingLeft="20dp"/>
 
             <EditText
-                android:id="@+id/txt_RegistrarDni"
+                android:id="@+id/txt_RegistrarFechaNacimiento"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/txt_RegistrarApellido"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
                 android:background="@drawable/stylo_borde_edittext"
-                android:hint="Dni"
+                android:hint="Fecha Nacimiento "
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:paddingLeft="20dp" />
@@ -97,17 +114,18 @@
                 android:id="@+id/txt_RegistrarTelefono"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:layout_below="@id/txt_RegistrarDni"
+                android:layout_below="@id/txt_RegistrarFechaNacimiento"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/stylo_borde_edittext"
                 android:hint="Número de telefóno"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
-                android:paddingLeft="20dp"/>
+                android:paddingLeft="20dp"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/txt_RegistrarCorreo"
@@ -117,47 +135,374 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/stylo_borde_edittext"
                 android:hint="Correo Electrónico"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
-                android:paddingLeft="20dp" />
+                android:paddingLeft="20dp"/>
 
             <EditText
-                android:id="@+id/txt_RegistrarContraseña"
+                android:id="@+id/txt_RegistrarDireccion"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/txt_RegistrarCorreo"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="12dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Dirección domicilio"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarNombreContactoEmergencia"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarDireccion"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Nombre contacto emergencia"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarNumeroContactoEmergencia"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarNombreContactoEmergencia"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Número contacto emergencia"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txt_RegistrarPeso"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarNumeroContactoEmergencia"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/separador3"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Peso"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/separador3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/txt_RegistrarNumeroContactoEmergencia"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/txt_RegistrarTalla"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txt_RegistrarNumeroContactoEmergencia"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:layout_toRightOf="@id/separador3"
+                android:background="@drawable/stylo_borde_edittext"
+                android:hint="Talla"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:paddingLeft="20dp"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/txt_pregunta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_below="@id/txt_RegistrarTalla"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="  ¿Tienes alguna de las siguientes"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_pregunta2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_below="@id/txt_pregunta"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/black"
+                android:text="     condiciones o enfermedades?"
+                android:textSize="20dp"
+                />
+
+           <TextView
+               android:id="@+id/tv_embarazo"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_alignParentLeft="true"
+               android:layout_marginLeft="40dp"
+               android:layout_below="@id/txt_pregunta2"
+               android:layout_marginTop="15dp"
+               android:textColor="@color/black"
+               android:text="Embarazo"
+               android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_obesidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_embarazo"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Obesidad"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_diabetes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_obesidad"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Diabetes"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_hipertension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_diabetes"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Hipertensión"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_inmunodepresion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_hipertension"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Inmunodepresión"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_cancer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_inmunodepresion"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Cáncer"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_insuficiencia_renal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_cancer"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Insuficiencia renal"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_insuficiencia_hepatica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/tv_insuficiencia_renal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:text="Insuficiencia hepática"
+                android:textSize="20dp" />
+
+
+
+            <Switch
+                android:id="@+id/sw_Registrar_Embarazo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_pregunta2"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Obesidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Embarazo"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Diabetes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Obesidad"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Hipertension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Diabetes"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Inmunodepresion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Hipertension"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Cancer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Inmunodepresion"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Insuficiencia_renal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Cancer"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <Switch
+                android:id="@+id/sw_Registrar_Insuficiencia_hepatica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sw_Registrar_Insuficiencia_renal"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:scaleX="1.7"
+                android:scaleY="1.7" />
+
+            <EditText
+                android:id="@+id/txt_RegistrarContraseña"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/sw_Registrar_Insuficiencia_hepatica"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
                 android:background="@drawable/stylo_borde_edittext"
                 android:hint="Contraseña"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:paddingLeft="20dp"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                />
 
             <EditText
                 android:id="@+id/txt_RegistrarConfirmarContraseña"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/txt_RegistrarContraseña"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/stylo_borde_edittext"
                 android:hint="Confirmar Contraseña"
                 android:textColorHint="@color/black"
                 android:textColor="@color/black"
                 android:paddingLeft="20dp"
                 android:inputType="textPassword"/>
+
 
             <Button
                 android:id="@+id/btn_CrearCuenta"
@@ -167,8 +512,9 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="12dp"
+                android:onClick="RegistrarUsuario"
                 android:text="CREAR CUENTA" />
 
             <TextView
@@ -218,6 +564,8 @@
                 android:text="INICIAR SESION"
                 android:textSize="12dp"
                 />
+
+
 
 
         </RelativeLayout>
