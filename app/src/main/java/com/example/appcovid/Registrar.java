@@ -217,7 +217,8 @@ public class Registrar extends AppCompatActivity {
                                                     p.setSw_Cancer(sw6_1);
                                                     p.setSw_Insuficiencia_renal(sw7_1);
                                                     p.setSw_Insuficiencia_hepatica(sw8_1);
-                                                    databaseReference.child("Usuario").child(p.getUid()).setValue(p);
+                                                   // databaseReference.child("Usuario").child(p.getUid()).setValue(p);
+                                                    databaseReference.child("Usuario1").child(p.getUid()).child("Paciente").setValue(p);
 
                                                     Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                                     startActivity(i);
