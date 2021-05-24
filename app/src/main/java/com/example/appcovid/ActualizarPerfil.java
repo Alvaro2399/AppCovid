@@ -40,7 +40,7 @@ public class ActualizarPerfil extends AppCompatActivity {
     }
     //Metodo para pasar de ventana
     public void Cancelar(View view){
-        Intent cancelar = new Intent(this, EvaluacionInicial.class);
+        Intent cancelar = new Intent(this, MenuOpciones.class);
         startActivity(cancelar);
     }
 

@@ -36,6 +36,7 @@ public class MenuOpciones extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         Intent Cerrar1 = new Intent(this, MainActivity.class);
         startActivity(Cerrar1);
+        finish();
     }
 
     //Metodo para pasar de ventana

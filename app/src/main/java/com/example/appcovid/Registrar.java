@@ -13,7 +13,10 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.appcovid.Model.HistoriaClinica;
+import com.example.appcovid.Model.Paciente;
 import com.example.appcovid.Model.Persona;
+import com.example.appcovid.Model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
@@ -194,6 +197,40 @@ public class Registrar extends AppCompatActivity {
                                                     //updateUI(user);
 
 
+                                                    Usuario u = new Usuario();
+                                                    u.setUid(UUID.randomUUID().toString());
+                                                    u.setCorreo(correo1);
+                                                    u.setContraseña(contraseña1);
+                                                    u.setConf_contraseña(conf_contraseña1);
+
+                                                    Paciente p = new Paciente();
+                                                    p.setDni(Integer.parseInt(dni1));
+                                                    p.setNombre(nombre1);
+                                                    p.setApellido(apellido1);
+                                                    p.setF_nacimiento(f_nacimiento1);
+                                                    p.setTelefono(Integer.parseInt(telefono1));
+                                                    p.setDir_domicilio(dir_domicilio1);
+                                                    p.setNomb_cont_emergencia(nomb_cont_emergencia1);
+                                                    p.setNum_cont_emergencia(Integer.parseInt(num_cont_emergencia1));
+
+                                                    HistoriaClinica h = new HistoriaClinica();
+                                                    h.setPeso(Integer.parseInt(peso1));
+                                                    h.setTalla(Integer.parseInt(talla1));
+                                                    h.setSw_Embarazo(sw1_1);
+                                                    h.setSw_Obesidad(sw2_1);
+                                                    h.setSw_Diabetes(sw3_1);
+                                                    h.setSw_Hipertension(sw4_1);
+                                                    h.setSw_Inmunodepresion(sw5_1);
+                                                    h.setSw_Cancer(sw6_1);
+                                                    h.setSw_Insuficiencia_renal(sw7_1);
+                                                    h.setSw_Insuficiencia_hepatica(sw8_1);
+
+                                                    databaseReference.child("RegistroAppCovid").child(u.getUid()).child("Usuario").setValue(u);
+                                                    databaseReference.child("RegistroAppCovid").child(u.getUid()).child("Paciente").setValue(p);
+                                                    databaseReference.child("RegistroAppCovid").child(u.getUid()).child("Historia_Clinica").setValue(h);
+
+                                                    /*
+
                                                     Persona p = new Persona();
                                                     p.setUid(UUID.randomUUID().toString());
                                                     p.setDni(Integer.parseInt(dni1));
@@ -219,6 +256,10 @@ public class Registrar extends AppCompatActivity {
                                                     p.setSw_Insuficiencia_hepatica(sw8_1);
                                                    // databaseReference.child("Usuario").child(p.getUid()).setValue(p);
                                                     databaseReference.child("Usuario1").child(p.getUid()).child("Paciente").setValue(p);
+
+                                                    */
+
+
 
                                                     Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                                     startActivity(i);

@@ -9,17 +9,28 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class EvaluacionInicial extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaaluacion_inicial);
+
+
     }
+
+
+
     @Override
     public void onBackPressed() {
 
     }
+
 
     //Metodo para pasar de ventana
     public void IrEvaluacionCovid(View view){
@@ -34,28 +45,7 @@ public class EvaluacionInicial extends AppCompatActivity {
     }
 
 
-    /*
-    //Metodo para mostrar y ocultar menu desplegable
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.overflow, menu);
-        return true;
-    }
-    */
-    //Metodo para signar funciones a las opciones del menu
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
 
-        if(id == R.id.item1){
-            Intent ActPerfil = new Intent(this, ActualizarPerfil.class);
-            startActivity(ActPerfil);
-        }else if(id == R.id.item2){
-            Toast.makeText(this,"Opcion 2", Toast.LENGTH_SHORT).show();
-        }else if(id == R.id.item3){
-            Intent fin = new Intent(this, MainActivity.class);
-            startActivity(fin);
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 
 

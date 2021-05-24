@@ -435,7 +435,7 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginRight="25dp"
                 android:layout_toRightOf="@id/separador_medio"
-                android:onClick="ContinuarPagPrin"
+                android:onClick="RegistrarEvalucionCovid"
                 android:text="CONTINUAR" />
 
             <TextView
