@@ -198,7 +198,8 @@ public class Registrar extends AppCompatActivity {
 
 
                                                     Usuario u = new Usuario();
-                                                    u.setUid(UUID.randomUUID().toString());
+                                                    u.setUid(user.getUid());
+                                                    //u.setUid(UUID.randomUUID().toString());
                                                     u.setCorreo(correo1);
                                                     u.setContraseña(contraseña1);
                                                     u.setConf_contraseña(conf_contraseña1);

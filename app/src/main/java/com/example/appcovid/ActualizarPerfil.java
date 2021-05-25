@@ -9,20 +9,37 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
 public class ActualizarPerfil extends AppCompatActivity {
+
+    //FIREBASE
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
+    EditText edt_correo, edt_name;
 
     EditText t1;
     private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
     static final int DATE_ID = 0;
     Calendar C = Calendar.getInstance();
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actualizar_perfil);
+
+        mAuth = FirebaseAuth.getInstance();
 
         sMonthIni = C.get(Calendar.MONTH);
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
@@ -37,7 +54,17 @@ public class ActualizarPerfil extends AppCompatActivity {
             }
         });
 
+
+        inicializarFirebase();
     }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+    }
+
+
     //Metodo para pasar de ventana
     public void Cancelar(View view){
         Intent cancelar = new Intent(this, MenuOpciones.class);
@@ -72,5 +99,33 @@ public class ActualizarPerfil extends AppCompatActivity {
 
         return null;
     }
+
+
+    public void ActualizarDatos(View view){
+
+        //INSTANCIAR DATOS
+        edt_correo = findViewById(R.id.txt_EditarCorreo);
+        edt_name = findViewById(R.id.txt_EditarNombre);
+
+
+        //OBTENER DATOS DEL USUARIO LOGEADO
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //VALIDAR EXISTENCIA DE USUARIUO
+        if (user != null) {
+
+            String email = user.getEmail();
+            String uid = user.getUid();
+
+            edt_correo.setText(email);
+
+
+        }else{
+            Toast.makeText(getApplicationContext(), "Usuario no existe",Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+
 
 }

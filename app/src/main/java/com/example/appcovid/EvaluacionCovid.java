@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.appcovid.Model.Evaluación;
 import com.example.appcovid.Model.Usuario;
@@ -19,14 +20,20 @@ public class EvaluacionCovid extends AppCompatActivity {
 
     private Switch evc1, evc2, evc3,evc4,evc5,evc6,evc7,evc8,evc9;
 
+
+
     //FIREBASE
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluacion_covid);
+
+        mAuth = FirebaseAuth.getInstance();
 
         //INSTANCIAR TODOS LOS SWITCHES
         evc1  = (Switch) findViewById(R.id.sw_evc_1);
@@ -73,8 +80,6 @@ public class EvaluacionCovid extends AppCompatActivity {
          Boolean evc9_1 = evc9.isChecked();
 
         Evaluación e = new Evaluación();
-        Usuario u = new Usuario();
-        //u.setUid();
 
         e.setSw_encuesta1(evc1_1);
         e.setSw_encuesta2(evc2_1);
@@ -86,7 +91,22 @@ public class EvaluacionCovid extends AppCompatActivity {
         e.setSw_encuesta8(evc8_1);
         e.setSw_encuesta9(evc9_1);
 
+        //Sirve para obtener el usuario que ha iniciado sesion
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //Validas la existencia del usuario
+        if (user != null) {
+            //
+            String uid = user.getUid();
+            databaseReference.child("RegistroAppCovid").child(uid).child("Evaluacion").setValue(e);
+
+            //edt_correo.setText(email);
+
+
+        }else{
+            Toast.makeText(getApplicationContext(), "Usuario no existe",Toast.LENGTH_SHORT).show();
+        }
+
+
 
         //databaseReference.child("RegistroAppCovid").child(u.id).child("Evaluacion").setValue(e);
 
