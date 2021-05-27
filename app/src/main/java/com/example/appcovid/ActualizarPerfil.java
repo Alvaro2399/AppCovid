@@ -1,5 +1,6 @@
 package com.example.appcovid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -9,13 +10,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -24,10 +29,20 @@ public class ActualizarPerfil extends AppCompatActivity {
     //FIREBASE
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    //private DatabaseReference mDatabase;
+    DatabaseReference ref;
+    //CREACION DE VARIABLES
+        //VARIABLES DATABASE USUARIO
+        private EditText edt_email;
+        //VARIABLES DATABASE PACIENTE
+        private EditText edt_ape,edt_dire,edt_fnac,edt_nom_emer,edt_name,edt_dni,edt_num_emer,edt_telf;
+        //VARIABLES DATABASE HISTORIA CLINICA
+        private EditText edt_peso,edt_talla;
+        private Switch edt_sw1,edt_sw2,edt_sw3,edt_sw4,edt_sw5,edt_sw6,edt_sw7,edt_sw8;
 
-    EditText edt_correo, edt_name;
 
-    EditText t1;
+    //VARIABLES PARA EL RELOJ
+    //EditText t1;
     private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
     static final int DATE_ID = 0;
     Calendar C = Calendar.getInstance();
@@ -44,9 +59,9 @@ public class ActualizarPerfil extends AppCompatActivity {
         sMonthIni = C.get(Calendar.MONTH);
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
         sYearIni = C.get(Calendar.YEAR);
-        t1 = (EditText) findViewById(R.id.txt_EditarFechaNacimiento);
+        edt_fnac = (EditText) findViewById(R.id.txt_EditarFechaNacimiento);
 
-        t1.setOnClickListener(new View.OnClickListener() {
+        edt_fnac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -54,7 +69,73 @@ public class ActualizarPerfil extends AppCompatActivity {
             }
         });
 
+        //ESTA SECCION SIRVE PARA JALAR LOS DATOS DE FIREBASE Y COLOCARLO EN EL FRAME
 
+        //INSTANCIAR DATOS
+        edt_dni        = findViewById(R.id.txt_EditarDni);
+        edt_name       = findViewById(R.id.txt_EditarNombre);
+        edt_ape        = findViewById(R.id.txt_EditarApellido);
+        edt_fnac       = findViewById(R.id.txt_EditarFechaNacimiento);
+        edt_telf       = findViewById(R.id.txt_EditarTelefono);
+        edt_email      = findViewById(R.id.txt_EditarCorreo);
+        edt_dire       = findViewById(R.id.txt_EditarDireccion);
+        edt_nom_emer   = findViewById(R.id.txt_EditarNombreContactoEmergencia);
+        edt_num_emer   = findViewById(R.id.txt_EditarNumeroContactoEmergencia);
+        edt_peso       = findViewById(R.id.txt_EditarPeso);
+        edt_talla      = findViewById(R.id.txt_EditarTalla);
+
+
+        edt_sw1 = (Switch) findViewById(R.id.sw_Embarazo);
+        edt_sw2 = (Switch) findViewById(R.id.sw_obesidad);
+        edt_sw3 = (Switch) findViewById(R.id.sw_diabetes);
+        edt_sw4 = (Switch) findViewById(R.id.sw_hipertension);
+        edt_sw5 = (Switch) findViewById(R.id.sw_inmunodepresion);
+        edt_sw6 = (Switch) findViewById(R.id.sw_cancer);
+        edt_sw7 = (Switch) findViewById(R.id.sw_insuficiencia_renal);
+        edt_sw8 = (Switch) findViewById(R.id.sw_insuficiencia_hepatica);
+
+
+        //OBTENER DATOS DEL USUARIO LOGEADO
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        ref = FirebaseDatabase.getInstance().getReference();
+
+        //VALIDAR EXISTENCIA DE USUARIUO
+        if (user != null){
+            String uid = user.getUid();
+
+            ref.child("RegistroAppCovid").child(uid).child("Usuario").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()){
+                        String email = dataSnapshot.child("correo").getValue(String.class);
+
+                        edt_email.setText(email);
+
+
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    System.out.println("Fallo la lectura :" + databaseError.getCode());
+                }
+            });
+
+
+
+        }else{
+            Toast.makeText(getApplicationContext(), "Usuario no existe",Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+
+
+
+
+       // mDatabase = FirebaseDatabase.getInstance().getReference();
         inicializarFirebase();
     }
 
@@ -72,7 +153,7 @@ public class ActualizarPerfil extends AppCompatActivity {
     }
 
     private void colocar_fecha() {
-        t1.setText((mMonthIni + 1) + "-" + mDayIni + "-" + mYearIni+" ");
+        edt_fnac.setText((mMonthIni + 1) + "-" + mDayIni + "-" + mYearIni+" ");
     }
 
     private DatePickerDialog.OnDateSetListener mDateSetListener =
@@ -103,27 +184,35 @@ public class ActualizarPerfil extends AppCompatActivity {
 
     public void ActualizarDatos(View view){
 
+        /*
+
         //INSTANCIAR DATOS
         edt_correo = findViewById(R.id.txt_EditarCorreo);
         edt_name = findViewById(R.id.txt_EditarNombre);
 
 
         //OBTENER DATOS DEL USUARIO LOGEADO
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        //VALIDAR EXISTENCIA DE USUARIUO
-        if (user != null) {
 
-            String email = user.getEmail();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //ref = FirebaseDatabase.getInstance().getReference();
+
+
+
+
+        //VALIDAR EXISTENCIA DE USUARIUO
+        if (user != null){
+
             String uid = user.getUid();
 
-            edt_correo.setText(email);
+           edt_name.setText(uid);
 
 
         }else{
             Toast.makeText(getApplicationContext(), "Usuario no existe",Toast.LENGTH_SHORT).show();
         }
 
-
+*/
     }
 
 

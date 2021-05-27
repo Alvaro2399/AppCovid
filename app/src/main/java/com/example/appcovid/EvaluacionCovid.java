@@ -23,8 +23,8 @@ public class EvaluacionCovid extends AppCompatActivity {
 
 
     //FIREBASE
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     private FirebaseAuth mAuth;
 
