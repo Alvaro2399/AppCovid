@@ -160,11 +160,25 @@ public class ActualizarPerfil extends AppCompatActivity {
                         int talla = dataSnapshot.child("talla").getValue(int.class);
                         int peso = dataSnapshot.child("peso").getValue(int.class);
                         Boolean embarazo = dataSnapshot.child("sw_Embarazo").getValue(Boolean.class);
+                        Boolean obesidad = dataSnapshot.child("sw_Obesidad").getValue(Boolean.class);
+                        Boolean diabetes = dataSnapshot.child("sw_Diabetes").getValue(Boolean.class);
+                        Boolean hipertension = dataSnapshot.child("sw_Hipertension").getValue(Boolean.class);
+                        Boolean inmudodepresion = dataSnapshot.child("sw_Inmunodepresion").getValue(Boolean.class);
+                        Boolean cancer = dataSnapshot.child("sw_Cancer").getValue(Boolean.class);
+                        Boolean renal = dataSnapshot.child("sw_Insuficiencia_renal").getValue(Boolean.class);
+                        Boolean hepatica = dataSnapshot.child("sw_Insuficiencia_hepatica").getValue(Boolean.class);
 
 
                         edt_talla.setText(String.valueOf(talla));
                         edt_peso.setText(String.valueOf(peso));
                         edt_sw1.setChecked(embarazo);
+                        edt_sw2.setChecked(obesidad);
+                        edt_sw3.setChecked(diabetes);
+                        edt_sw4.setChecked(hipertension);
+                        edt_sw5.setChecked(inmudodepresion);
+                        edt_sw6.setChecked(cancer);
+                        edt_sw7.setChecked(renal);
+                        edt_sw8.setChecked(hepatica);
 
                     }
                 }
