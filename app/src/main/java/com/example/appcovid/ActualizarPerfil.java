@@ -103,15 +103,13 @@ public class ActualizarPerfil extends AppCompatActivity {
         if (user != null){
             String uid = user.getUid();
 
+            //OBTENER DATOS DE LA TABLA USUARIO
             ref.child("RegistroAppCovid").child(uid).child("Usuario").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists()){
                         String email = dataSnapshot.child("correo").getValue(String.class);
-
                         edt_email.setText(email);
-
-
 
                     }
                 }
@@ -119,6 +117,61 @@ public class ActualizarPerfil extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
                     System.out.println("Fallo la lectura :" + databaseError.getCode());
+                }
+            });
+
+            //OBTENER DATOS DE LA TABLA PACIENTE
+            ref.child("RegistroAppCovid").child(uid).child("Paciente").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                   if(dataSnapshot.exists()){
+
+                        int dni = dataSnapshot.child("dni").getValue(int.class);
+                        String nombre = dataSnapshot.child("nombre").getValue(String.class);
+                        String apellido = dataSnapshot.child("apellido").getValue(String.class);
+                        String fecha_nacimiento = dataSnapshot.child("f_nacimiento").getValue(String.class);
+                        int celular = dataSnapshot.child("telefono").getValue(int.class);
+                        String dire = dataSnapshot.child("dir_domicilio").getValue(String.class);
+                        String nom_conta = dataSnapshot.child("nomb_cont_emergencia").getValue(String.class);
+                        int num_conta = dataSnapshot.child("num_cont_emergencia").getValue(int.class);
+
+                        edt_dni.setText(String.valueOf(dni));
+                        edt_name.setText(nombre);
+                        edt_ape.setText(apellido);
+                        edt_fnac.setText(fecha_nacimiento);
+                        edt_telf.setText(String.valueOf(celular));
+                        edt_dire.setText(dire);
+                        edt_nom_emer.setText(nom_conta);
+                        edt_num_emer.setText(String.valueOf(num_conta));
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+            //OBTENER DATOS DE LA TABLA HISTORIA CLINICA
+            ref.child("RegistroAppCovid").child(uid).child("Historia_Clinica").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()){
+                        int talla = dataSnapshot.child("talla").getValue(int.class);
+                        int peso = dataSnapshot.child("peso").getValue(int.class);
+                        Boolean embarazo = dataSnapshot.child("sw_Embarazo").getValue(Boolean.class);
+
+
+                        edt_talla.setText(String.valueOf(talla));
+                        edt_peso.setText(String.valueOf(peso));
+                        edt_sw1.setChecked(embarazo);
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
                 }
             });
 
